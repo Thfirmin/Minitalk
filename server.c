@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 21:55:15 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/08/23 02:58:35 by Thinotsuki   ###     ###.br              */
+/*   Updated: 2022/08/23 03:10:55 by Thinotsuki   ###     ###.br              */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,19 @@ int	main(void)
 
 void	usrhandler(int signum, siginfo_t *info, void *context)
 {
-//	static int	bits;
+	static int	bits;
+	static int	c;
 
 	(void)context;
-	(void)info;
 	if (signum == SIGUSR2)
-		ft_putchar_fd('1', 1);
-	else
-		ft_putchar_fd('0', 1);
-//	if (c == 0)
-i//		kill(info->si_pid, SIGUSR1);
+		c += 1 << (7 - bits);
+	bits++;
+	if (bits == 8)
+	{
+		ft_putchar_fd(c, 1);
+		if (c == 0)
+			kill(info->si_pid, SIGUSR1);
+		c = 0;
+		bits = 0;
+	}
 }
