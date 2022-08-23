@@ -6,14 +6,12 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 23:58:21 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/08/22 18:35:30 by Thinotsuki   ###     ###.br              */
+/*   Updated: 2022/08/23 03:54:20 by Thinotsuki   ###     ###.br              */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "../libft.h"
-
-
 
 static size_t	holderfinder(const char plcholder, va_list plcvalue);
 
@@ -58,11 +56,11 @@ static size_t	holderfinder(const char plcholder, va_list plcvalue)
 		len += ft_putchar_fd(va_arg(plcvalue, int), 1);
 	else if (plcholder == 's')
 	{
-		str = va_arg(plcvalue, char*);
+		str = va_arg (plcvalue, char *);
 		if (str)
-			len += ft_putstr_fd(str, 1);
+			len += ft_putstr_fd (str, 1);
 		else
-			len += ft_putstr_fd("(null)", 1);
+			len += ft_putstr_fd ("(null)", 1);
 	}
 	else if (plcholder == 'd' || plcholder == 'i')
 		len += ft_putnbr_fd(va_arg(plcvalue, int), 1);

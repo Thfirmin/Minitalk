@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 21:55:15 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/08/23 03:10:55 by Thinotsuki   ###     ###.br              */
+/*   Updated: 2022/08/23 03:55:19 by Thinotsuki   ###     ###.br              */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	usrhandler(int signum, siginfo_t *info, void *context);
 
 int	main(void)
 {
-	struct sigaction usr_h;
+	struct sigaction	usr_h;
 
 	usr_h.sa_sigaction = &usrhandler;
 	usr_h.sa_flags = SA_SIGINFO | SA_RESTART;

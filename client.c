@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 21:54:54 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/08/23 02:54:47 by Thinotsuki   ###     ###.br              */
+/*   Updated: 2022/08/23 03:47:43 by Thinotsuki   ###     ###.br              */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_return(int signum);
 
-int	ft_isalldigit(char	*str);
+int		ft_isalldigit(char	*str);
 
 void	ft_atobin(char c, pid_t n_pid);
 
@@ -64,7 +64,7 @@ int	ft_isalldigit(char	*str)
 
 void	ft_return(int signum)
 {
-	if(signum == SIGUSR1)
+	if (signum == SIGUSR1)
 	{
 		ft_printf ("Success sending message!\n");
 		exit(EXIT_SUCCESS);
@@ -75,4 +75,3 @@ void	ft_return(int signum)
 		exit(EXIT_FAILURE);
 	}
 }
-
